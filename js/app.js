@@ -5,6 +5,8 @@ window.addEventListener("mousemove", (e) => {
     const yValue = (e.clientY - window.innerHeight / 2) ; // Adjust the multiplier to control the effect strength
 
     parallaxElements.forEach((el) => {
-        el.style.transform = `translate(calc(-50% + ${-xValue}px), calc(-50% + ${-yValue}px))`;
+        let speedx = el.dataset.speedx;
+        let speedy = el.dataset.speedy;
+        el.style.transform = `translate(calc(-50% + ${-xValue * speedx}px), calc(-50% + ${-yValue * speedy}px))`;
     });
 });
