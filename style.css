@@ -107,6 +107,10 @@ main {
   overflow: hidden;
 }
 
+.parallax {
+  pointer-events: none;
+}
+
 .bg-img {
   position: absolute;
   width: 2800px;
@@ -182,12 +186,17 @@ main {
 .text {
   position: absolute;
   z-index: 9;
-  top: 50%;
+  top: calc(50% - 130px);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   text-transform: uppercase;
   color: #fff;
+  pointer-events: auto;
+}
+
+::selection{
+  background-color: #0b372dbb;
 }
 
 .text h2 {
@@ -223,26 +232,26 @@ main {
 .mountain-5 {
   position: absolute;
   z-index: 12;
-  top: calc(50% + 269px);
-  width: 583px;
+  top: calc(50% + 250px);
+  width: 625px;
   left: calc(50% + 130px);
   transform: translate(-50%, -50%);
 }
 
-.fog-5 {
+.fog-3 {
   position: absolute;
   z-index: 13;
-  top: calc(50% + 149px);
-  left: calc(50% - 28px);
-  width: 1435px;
+  top: calc(50% + 110px);
+  left: calc(50% - 15px);
+  width: 1600px;
   transform: translate(-50%, -50%);
 }
 
 .mountain-4 {
   position: absolute;
   z-index: 14;
-  top: calc(50% + 221px);
-  width: 717px;
+  top: calc(50% + 196px);
+  width: 780px;
   left: calc(50% - 381.5px);
   transform: translate(-50%, -50%);
 }
@@ -251,15 +260,14 @@ main {
   position: absolute;
   z-index: 15;
   top: calc(50% + 133px);
-  left: calc(50% + 736px);
+  left: calc(50% + 736 px);
   width: 419px;
-  transform: translate(-50%, -50%);
 }
 
-.fog-6 {
+.fog-2 {
   position: absolute;
   z-index: 16;
-  top: calc(50% + 177px);
+  top: calc(50% + 147px);
   left: calc(50% - 30px);
   width: 1418px;
   transform: translate(-50%, -50%);
@@ -268,18 +276,18 @@ main {
 .mountain-2 {
   position: absolute;
   z-index: 17;
-  top: calc(50% + 188px);
+  top: calc(50% + 154px);
   left: calc(50% + 412px);
-  width: 625px;
+  width: 690px;
   transform: translate(-50%, -50%);
 }
 
 .mountain-1 {
   position: absolute;
   z-index: 18;
-  top: calc(50% + 91.5px);
+  top: calc(50% + 17px);
   left: calc(50% - 601px);
-  width: 450px;
+  width: 530px;
   transform: translate(-50%, -50%);
 }
 
@@ -289,6 +297,7 @@ main {
   top: 0;
   right: 0;
   width: 595px;
+  pointer-events: none;
 }
 
 .black-shadow {
@@ -297,6 +306,7 @@ main {
   bottom: 0;
   right: 0;
   width: 100%;
+  pointer-events: none;
 }
 
 .fog-1 {
@@ -306,4 +316,19 @@ main {
   top: calc(100% - 355px);
   left: 50%;
   transform: translate(-50%, -50%);
-} 
+}
+
+.vignette {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.7)
+  );
+  pointer-events: none;
+}
